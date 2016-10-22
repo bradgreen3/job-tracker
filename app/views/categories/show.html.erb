@@ -1,0 +1,13 @@
+<h1> <%= @category.title %> </h1>
+
+<p> <u> Jobs: </u> </p>
+
+<ul>
+<% @category.jobs.each do |job| %>
+<li>
+<%= link_to job.title, company_job_path(job, job.company) %>
+</li>
+<% end %>
+</ul>
+
+<%= button_to "All Categories", categories_path %>

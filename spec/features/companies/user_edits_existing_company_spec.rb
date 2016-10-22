@@ -3,8 +3,8 @@ require 'rails_helper'
 describe "User edits an existing company" do
   scenario "a user can edit a company" do
     company = Company.create(name: "ESPN", city: "LA")
-    visit edit_company_path(company)
 
+    visit edit_company_path(company)
     fill_in "company[name]", with: "EA Sports"
     click_button "Update"
 

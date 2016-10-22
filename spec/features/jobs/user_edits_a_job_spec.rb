@@ -2,9 +2,10 @@ require 'rails_helper'
 
 describe "User edits a job" do
   scenario "and job attributes are updated" do
-    
+
     company = Company.create(name: "ESPN", city: "NYC")
-    job = company.jobs.create(title: "Mechanic", description: "Fix stuff", level_of_interest: 3)
+    cat1 = Category.create(title: "News")
+    job = company.jobs.create(title: "Mechanic", description: "Fix stuff", level_of_interest: 3, category: cat1)
 
     visit company_job_path(company, job)
     click_link "Edit"

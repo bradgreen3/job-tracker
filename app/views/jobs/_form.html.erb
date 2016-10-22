@@ -8,5 +8,7 @@
   <%= f.label :level_of_interest %>
   <%= f.number_field :level_of_interest %>
 
+  <%= f.collection_select :category_id, @categories, :id, :title %>
+
   <%= f.submit %>
 <% end %>
