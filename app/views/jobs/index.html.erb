@@ -16,14 +16,10 @@ All Jobs for <strong><%= @company.name %></strong>
   <th>Company</th>
   <% @contacts.each do |contact| %>
   <tr>
-
-  <td> <%= contact.full_name %> </td>
-
-  <td> <%= contact.email %> </td>
-
-  <td> <%= contact.position %> </td>
-
-  <td> <%= @company.name %> </td>
+    <td> <%= contact.full_name %> </td>
+    <td> <%= contact.email %> </td>
+    <td> <%= contact.position %> </td>
+    <td> <%= @company.name %> </td>
   </tr>
   <% end %>
 </table>
