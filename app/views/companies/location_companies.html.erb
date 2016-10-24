@@ -1,0 +1,9 @@
+<h1> Companies in <%= params[:location] %> </h1>
+
+<% @companies.where(city: params[:location]).each do |company| %>
+<%= company.name %>
+<br>
+<% end %>
+
+<br>
+<%= link_to "Home", dashboard_index_path %>

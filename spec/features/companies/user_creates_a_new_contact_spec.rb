@@ -17,7 +17,6 @@ describe 'user creates a contact' do
     fill_in "contact_email", with: "corso@espn.com"
     click_button "Create Contact"
 
-    save_and_open_page
     expect(current_path).to eq(company_jobs_path(company))
     expect(page).to have_content("Lee Corso")
     expect(page).to have_content("Announcer")

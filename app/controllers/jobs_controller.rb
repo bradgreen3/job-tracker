@@ -1,8 +1,12 @@
 class JobsController < ApplicationController
   def index
-    @company = Company.find(params[:company_id])
-    @jobs = @company.jobs
-    @contacts = Contact.all
+    if params[:sort]
+      render :interest_jobs
+    else
+      @company = Company.find(params[:company_id])
+      @jobs = @company.jobs
+      @contacts = Contact.all
+    end
   end
 
   def new
@@ -58,6 +62,6 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :level_of_interest, :category_id)
+    params.require(:job).permit(:title, :description, :level_of_interest, :category_id, :sort)
   end
 end

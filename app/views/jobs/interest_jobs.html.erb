@@ -1,0 +1,7 @@
+<h3> All Jobs Sorted by Level of Interest </h3>
+
+<% Job.all.sort_by(&:level_of_interest).reverse.each do |obj| %>
+<%= obj.title %>
+<%= obj.level_of_interest %>
+<br>
+<% end %>
