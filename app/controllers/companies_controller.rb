@@ -1,6 +1,13 @@
 class CompaniesController < ApplicationController
   def index
     @companies = Company.all
+    if params[:sort]
+      render :location
+    elsif params[:location]
+      render :location_companies
+    else
+      @companies
+    end
   end
 
   def new
@@ -45,10 +52,9 @@ class CompaniesController < ApplicationController
     redirect_to companies_path
   end
 
-
   private
 
   def company_params
-    params.require(:company).permit(:name, :city)
+    params.require(:company).permit(:name, :city, :sort, :location)
   end
 end
